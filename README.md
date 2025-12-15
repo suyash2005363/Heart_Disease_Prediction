@@ -1,36 +1,31 @@
-# Heart_Disease_Prediction
-❤️ Heart Disease Prediction Web Application
+Heart Disease Prediction Web Application
 
-A full-stack machine learning web application that predicts the likelihood of heart disease based on user health parameters.
-The system combines a trained ML model, a Python backend API, and a user-friendly frontend interface.
+This project is a web-based application that predicts the possibility of heart disease using a machine learning model.
+It is built as an end-to-end project, combining machine learning, backend development, and frontend design.
 
-🚀 Features
+The main goal of this project is to understand how a trained ML model can be integrated into a real-world web application.
 
-Predicts heart disease risk using machine learning
+What This Project Does
 
-Clean and simple user interface
+Takes health-related inputs from the user
 
-Real-time prediction results
+Sends the data to a backend API
 
-Backend API for model inference
+Uses a trained ML model to make predictions
 
-Well-structured ML workflow (data preprocessing → training → prediction)
+Displays the prediction result on the web interface
 
-🧠 Machine Learning Model
+Machine Learning Part
 
-Algorithm Used: Random Forest Classifier
+Model used: Random Forest Classifier
 
-Reason for choosing Random Forest:
+The model is trained using a heart disease dataset
 
-High accuracy
+Data preprocessing and model training are done in a Jupyter Notebook
 
-Handles non-linear data well
+The trained model is saved and used in the backend for predictions
 
-Robust to overfitting
-
-Works well with medical datasets
-
-Libraries Used:
+Libraries used:
 
 pandas
 
@@ -38,27 +33,19 @@ numpy
 
 scikit-learn
 
-matplotlib
+Tech Stack Used
 
-The model is trained in a Jupyter Notebook and later saved and used in the backend for predictions.
-
-🖥️ Tech Stack
 Frontend
 
-HTML
+React.js (Vite)
 
-CSS
-
-JavaScript
-(or React.js – update if applicable)
+HTML, CSS, JavaScript
 
 Backend
 
 Python
 
-Flask / FastAPI (update whichever you used)
-
-REST API
+Flask (or FastAPI – update if needed)
 
 Machine Learning
 
@@ -68,98 +55,48 @@ Pandas
 
 NumPy
 
-📂 Project Structure
-heart-disease-predictor/
-│
-├── notebooks/
-│   └── heart_disease_model.ipynb
-│
-├── backend/
-│   ├── main.py
-│   ├── model.pkl
-│   └── requirements.txt
-│
-├── frontend/
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-│
+Project Structure
+Heart_Disease_Prediction/
+├── notebooks/        # Model training notebook
+├── backend/          # Backend API and ML model
+├── frontend/         # Frontend UI
 ├── README.md
 └── .gitignore
 
-⚙️ How It Works
-
-User enters medical details such as:
-
-Age
-
-Cholesterol
-
-Blood pressure
-
-Heart rate, etc.
-
-Data is sent to the backend API
-
-Backend loads the trained ML model
-
-Model predicts:
-
-Heart Disease Risk: Yes / No
-
-Result is displayed on the frontend
-
-▶️ How to Run the Project Locally
-1️⃣ Clone the repository
-git clone https://github.com/your-username/heart-disease-predictor.git
-cd heart-disease-predictor
-
-2️⃣ Backend Setup
+How to Run the Project
+Backend
 cd backend
 pip install -r requirements.txt
-python main.py
+python app.py
 
+Frontend
+cd frontend
+npm install
+npm run dev
 
-Backend will start on:
+Why I Built This Project
 
-http://localhost:8000
+I built this project to:
 
+Practice machine learning on a real dataset
 
-(or 5000 depending on your setup)
+Learn how ML models are used in backend APIs
 
-3️⃣ Frontend Setup
+Understand frontend–backend communication
 
-Open index.html directly in the browser
-OR
+Build a complete, deployable ML project
 
-Use Live Server (recommended)
+Future Improvements
 
-📊 Dataset
-
-Heart Disease Dataset
-
-Cleaned and preprocessed before training
-
-Feature scaling and validation performed
-
-📌 Future Improvements
+Improve UI design
 
 Add user authentication
 
-Improve UI/UX
+Deploy the application online
 
-Deploy on cloud (AWS / Render / Railway)
+Add more detailed health recommendations
 
-Add detailed health recommendations
-
-Store prediction history
-
-👨‍💻 Author
+Author
 
 Suyash
-Machine Learning Enthusiast | Full-Stack ML Developer
-
-⭐ If you like this project
-
-Don’t forget to star the repository ⭐
-It motivates me to build more projects!
+B.Tech Student | Machine Learning Enthusiast
