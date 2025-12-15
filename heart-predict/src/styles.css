@@ -1,0 +1,236 @@
+/* ============================
+   Complete styles.css
+   (replace entire file with this)
+   ============================ */
+
+:root{
+  --bg:#f3f4f6;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --container-max:920px; /* allow room for MUI cards */
+}
+
+/* Base */
+html,body{
+  height:100%;
+  margin:0;
+  padding:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background:var(--bg);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Ensure main centers the content */
+main { display:flex; justify-content:center; }
+
+/* Centered container */
+.container{
+  width:100%;
+  max-width:var(--container-max);
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:18px;
+  padding-right:18px;
+  box-sizing:border-box;
+}
+@media (min-width:1600px){
+  .container{ max-width:1100px; }
+}
+
+/* ============================
+   NAVBAR
+   ============================ */
+.navbar{
+  background:var(--card);
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  padding:12px 0;
+}
+.nav-inner{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.nav-left{ display:flex; align-items:center; gap:10px; }
+.nav-logo{ width:48px; height:48px; border-radius:10px; object-fit:cover; display:block; }
+.nav-title{ font-size:18px; margin:0; font-weight:600; }
+.nav-sub{ font-size:12px; margin:0; color:var(--muted); }
+.nav-links{ display:flex; gap:18px; align-items:center; }
+.nav-links a{ text-decoration:none; color:#374151; font-size:15px; padding:6px 4px; }
+.nav-links a:hover{ color:var(--accent); }
+
+/* backend indicator dot */
+.backend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.03);
+}
+.backend-dot.ok { background: #16a34a; }      /* green */
+.backend-dot.down { background: #ef4444; }    /* red */
+.backend-dot.unknown { background: #9ca3af; } /* gray */
+
+.backend-dot { width:10px; height:10px; border-radius:999px; display:inline-block; }
+.backend-dot.ok { background:#16a34a; }
+.backend-dot.down { background:#ef4444; }
+.backend-dot.unknown { background:#9ca3af; }
+
+
+
+/* ============================
+   HERO (stacked centered)
+   ============================ */
+.hero-centered{
+  background:var(--card);
+  padding:26px;
+  margin-top:26px;
+  border-radius:14px;
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  box-shadow:0 8px 24px rgba(16,24,40,0.06);
+  gap:16px;
+}
+.hero-image{
+  width:100%;
+  max-width:520px;
+  border-radius:12px;
+  object-fit:cover;
+  box-shadow:0 6px 18px rgba(16,24,40,0.04);
+}
+.hero-title{ font-size:26px; margin:0; font-weight:700; color:#0f172a; }
+.hero-sub{ max-width:700px; color:var(--muted); margin:0; line-height:1.6; font-size:15px; }
+.hero-buttons{ display:flex; gap:12px; justify-content:center; margin-top:6px; }
+.btn-primary{ background:var(--accent); color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none; font-size:15px; }
+.btn-secondary{ background:#fff; border:1px solid #d1d5db; color:#374151; padding:10px 18px; border-radius:8px; text-decoration:none; font-size:15px; }
+.hero-note{ font-size:13.5px; color:var(--muted); max-width:700px; line-height:1.5; }
+
+/* ============================
+   INFO CARDS
+   ============================ */
+.info-grid{
+  margin-top:22px;
+  display:grid;
+  gap:16px;
+  grid-template-columns:1fr;
+}
+@media(min-width:700px){
+  .info-grid{ grid-template-columns:repeat(3,1fr); }
+}
+.card{ background:var(--card); padding:16px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+.card h3{ margin:0 0 8px 0; font-size:15.5px; font-weight:600; }
+.card p{ margin:0; color:var(--muted); line-height:1.45; }
+
+/* ============================
+   FORM PAGE (MUI + local styles)
+   ============================ */
+
+/* Form wrapper card */
+.form-card {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+  margin-top: 22px;
+}
+
+/* Title/subtext */
+.form-title { margin: 0 0 8px 0; font-size:20px; font-weight:700; }
+.form-sub { margin:0 0 14px 0; color:var(--muted); }
+
+/* Grid of controls (fallback to 1 column, 2 on wide screens) */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+@media (min-width:880px){
+  .form-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Form row: label + controls */
+.form-row { display:flex; flex-direction:column; gap:10px; }
+.form-label { font-size:13px; color:#374151; }
+
+/* When using native range and number controls (fallback) */
+.range {
+  -webkit-appearance:none;
+  width:220px;
+  height:6px;
+  background:#e6e6e6;
+  border-radius:8px;
+}
+.range::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:16px; height:16px; border-radius:50%; background:var(--accent); cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+.num { width:80px; padding:6px 8px; border:1px solid #e5e7eb; border-radius:8px; }
+
+/* result area layout */
+.result-row { display:flex; flex-direction:column; gap:14px; margin-top:18px; }
+@media (min-width:900px){ .result-row { flex-direction:row; } }
+
+.result-card {
+  flex: 0 0 320px;
+  background: var(--card);
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+}
+.result-head { font-weight:600; margin-bottom:10px; }
+
+.prob-wrap {
+  background:#f1f5f9;
+  height:14px;
+  border-radius:8px;
+  overflow:hidden;
+  margin-bottom:8px;
+}
+.prob-bar {
+  height:100%;
+  background: linear-gradient(90deg,#60a5fa,#2563eb);
+  width:0%;
+  transition: width 300ms ease;
+  border-radius:8px;
+}
+.prob-text { color:#111827; margin-bottom:8px; }
+.recommend .low { color:#047857; }
+.recommend .med { color:#b45309; }
+.recommend .high { color:#b91c1c; }
+
+/* explain card */
+.explain-card {
+  flex:1 1 360px;
+  background:var(--card);
+  border-radius:12px;
+  padding:16px;
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
+}
+.feature-list { margin:0 0 12px 16px; padding:0; color:#374151; }
+.note { color:var(--muted); font-size:13px; }
+
+/* ============================
+   MUI-specific small adjustments
+   (keep MUI inputs tidy in our layout)
+   ============================ */
+
+/* allow more width for MUI boxes within container */
+.container { max-width: var(--container-max); }
+
+/* ensure MUI Box / card elements follow box-sizing */
+.form-card, .MuiBox-root { box-sizing: border-box; }
+
+/* reduce default MUI TextField root width in our grid */
+.MuiTextField-root { max-width: 120px; }
+
+/* reduce default margin/padding on some MUI classes just in case */
+.MuiSlider-root { max-width: 100%; }
+
+/* ============================
+   Small screens tweaks
+   ============================ */
+@media (max-width:420px) {
+  .container { padding-left:12px; padding-right:12px; }
+  .hero-title { font-size:22px; }
+  .hero-sub, .hero-note { font-size:14px; }
+  .nav-links { display:none; } /* optional: hide nav links on tiny screens */
+}
